@@ -1,18 +1,20 @@
 #include "lemlib/api.hpp" // IWYU pragma: keep
 #include "lemlib/chassis/chassis.hpp"
 
+using namespace pros;
+
 //Controller
-extern pros::Controller controller;
+extern Controller controller;
 
 // Motor Groups
-extern pros::MotorGroup leftSide;
-extern pros::MotorGroup rightSide;
+extern MotorGroup leftSide;
+extern MotorGroup rightSide;
 
 // drivetrain settings
 extern lemlib::Drivetrain drivetrain;
 
 //Inertial Sensor
-extern pros::Imu imu;
+extern Imu imu;
 
 //Lemlib entire configuration for tracking
 extern lemlib::OdomSensors sensors;

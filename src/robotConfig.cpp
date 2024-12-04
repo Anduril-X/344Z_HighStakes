@@ -3,12 +3,14 @@
 #include "pros/motor_group.hpp"
 #include "robotConfig.h"
 
+using namespace pros;
+
 //Controller
-pros::Controller controller = pros::Controller(pros::E_CONTROLLER_MASTER);
+Controller controller = Controller(E_CONTROLLER_MASTER);
 
 // Motor Groups
-pros::MotorGroup leftSide = pros::MotorGroup({1, 2, 3}, pros::MotorGearset::blue);
-pros::MotorGroup rightSide = pros::MotorGroup({4, 5, 6}, pros::MotorGearset::blue);
+MotorGroup leftSide = MotorGroup({1, 2, 3}, MotorGearset::blue);
+MotorGroup rightSide = MotorGroup({4, 5, 6}, MotorGearset::blue);
 
 // drivetrain settings
 lemlib::Drivetrain drivetrain = lemlib::Drivetrain(&leftSide, // left motor group
@@ -20,7 +22,7 @@ lemlib::Drivetrain drivetrain = lemlib::Drivetrain(&leftSide, // left motor grou
 );
 
 //Inertial Sensor
-pros::Imu imu = pros::Imu(10);
+Imu imu = Imu(10);
 
 //Lemlib entire configuration for tracking
 lemlib::OdomSensors sensors = lemlib::OdomSensors(nullptr, // vertical tracking wheel 1, set to nullptr as we are using IMEs
@@ -67,10 +69,10 @@ lemlib::ExpoDriveCurve steerCurve = lemlib::ExpoDriveCurve(3, // joystick deadba
 );
 
 // create the chassis
-lemlib::Chassis chassis(drivetrain,
-                        lateralController,
-                        angularController,
-                        sensors,
-                        &throttleCurve, 
-                        &steerCurve
+lemlib::Chassis chassis = lemlib::Chassis(drivetrain,
+                                          lateralController,
+                                          angularController,
+                                          sensors,
+                                          &throttleCurve, 
+                                          &steerCurve
 );
