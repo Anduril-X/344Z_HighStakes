@@ -15,7 +15,8 @@
  * to keep execution time for this mode under a few seconds.
  */
 void initialize() {
-	myInitialize();
+	//myInitialize();
+	compInitialize();
 }
 
 /**
