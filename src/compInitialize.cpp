@@ -8,7 +8,6 @@
 using namespace pros;
 
 void compInitialize() {
-    lcd::initialize(); // initialize brain screen
     //Register callbacks for button presses on the brain screen
     lcd::register_btn0_cb(leftButton);
     lcd::register_btn1_cb(centerButton);

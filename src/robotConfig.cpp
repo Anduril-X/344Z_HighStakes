@@ -24,10 +24,14 @@ lemlib::Drivetrain drivetrain = lemlib::Drivetrain(&leftSide, // left motor grou
 //Inertial Sensor
 Imu imu = Imu(10);
 
+//Lateral Wheel Sensor
+adi::Encoder encoder = pros::adi::Encoder('A', 'B');
+lemlib::TrackingWheel trackingWheel = lemlib::TrackingWheel(&encoder, lemlib::Omniwheel::NEW_275, -5.75);
+
 //Lemlib entire configuration for tracking
 lemlib::OdomSensors sensors = lemlib::OdomSensors(nullptr, // vertical tracking wheel 1, set to nullptr as we are using IMEs
                                                   nullptr, // vertical tracking wheel 2, set to nullptr as we are using IMEs
-                                                  nullptr, // horizontal tracking wheel 1, set to nullptr as we are using IMEs
+                                                  &trackingWheel, // horizontal tracking wheel 1
                                                   nullptr, // horizontal tracking wheel 2, set to nullptr as we are using IMEs
                                                   &imu // inertial sensor
 );

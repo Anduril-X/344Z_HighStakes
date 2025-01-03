@@ -16,6 +16,10 @@ extern lemlib::Drivetrain drivetrain;
 //Inertial Sensor
 extern Imu imu;
 
+//Lateral Wheel Sensor
+extern adi::Encoder encoder;
+extern lemlib::TrackingWheel trackingWheel;
+
 //Lemlib entire configuration for tracking
 extern lemlib::OdomSensors sensors;
 

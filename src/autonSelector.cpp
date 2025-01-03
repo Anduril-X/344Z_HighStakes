@@ -8,7 +8,7 @@ short numberOfAutons = 5;
 short autonSelection = -1; //default value to fail if no auton is selected
 
 
-//Callback function for the left button to cycle through the available autonomous routines
+//Callback function for the right lcd button to cycle through the available autonomous routines
 void rightButton() {
     if (autonSelection == -1) {
         if (shownAuton == numberOfAutons - 1) {
@@ -25,7 +25,7 @@ void rightButton() {
 }
 
 
-//Callback function for the left button to cycle through the available autonomous routines
+//Callback function for the left lcd button to cycle through the available autonomous routines
 void leftButton() {
     if (autonSelection == -1) {
         if (shownAuton == 0) {
@@ -42,7 +42,7 @@ void leftButton() {
 }
 
 
-//Callback function for the center button to select an autonomous routine
+//Callback function for the center lcd button to select an autonomous routine
 void centerButton() {
     if (autonSelection == -1) {
         autonSelection = shownAuton;
