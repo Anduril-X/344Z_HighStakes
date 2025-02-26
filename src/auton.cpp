@@ -1,17 +1,18 @@
-#include "lemlib/api.hpp" // IWYU pragma: keep
 #include "auton.h"
 #include "autonSelector.h"
+#include <iostream>
+#include "robotConfig.h"
 
 using namespace pros;
 
-std::string autons[5] = {"name1", //auton1
+/*std::string autons[5] = {"name1", //auton1
                          "name2",  //auton2
                          "name3",  //auton3
                          "name4",  //auton4
-                         "name5"};  //auton5
+                         "name5"};  //auton5*/
 
 void auton() {
-    //Run the ____ auton
+    /*//Run the ____ auton
     if (autonSelection == 0) {
 
     }
@@ -33,8 +34,8 @@ void auton() {
     }
     //Default in case no selection so the robot does not disqualify itself.
     else {
-        while(true) {
-            delay(20); 
-        }
-    }
+        whole.move(25);
+        delay(1000);
+        whole.brake();
+    }*/
 }

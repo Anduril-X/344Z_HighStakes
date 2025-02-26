@@ -1,0 +1,2 @@
+void tipperToggle();
+void clearerToggle();

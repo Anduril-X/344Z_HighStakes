@@ -3,7 +3,7 @@
 #include "compInitialize.h"
 #include "liblvgl/llemu.hpp"
 
-short shownAuton = 0;
+/*short shownAuton = 0;
 short numberOfAutons = 5;
 short autonSelection = -1; //default value to fail if no auton is selected
 
@@ -50,4 +50,4 @@ void centerButton() {
     else {
         pros::lcd::set_text(2, "You have already selected an auton.");
     }
-}
+}*/

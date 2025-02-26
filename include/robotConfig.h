@@ -6,19 +6,32 @@ using namespace pros;
 //Controller
 extern Controller controller;
 
-// Motor Groups
+// Motor Groups for drivetrain
 extern MotorGroup leftSide;
 extern MotorGroup rightSide;
+extern MotorGroup whole;
+
+//Motor for chain lift and intake
+extern Motor intakeMotor;
+
+//Motor and sensor for the lady brown
+extern Motor ladyBrown;
+extern Rotation rotSensor;
+
+//Solenoid for mobile goal clamp
+extern adi::DigitalOut clampSolenoid;
+
+//Solenoid for Corner Clearer
+extern adi::DigitalOut cornerClearer;
+
+//Solenoid for tipper
+extern adi::DigitalOut tipper;
 
 // drivetrain settings
 extern lemlib::Drivetrain drivetrain;
 
 //Inertial Sensor
 extern Imu imu;
-
-//Lateral Wheel Sensor
-extern adi::Encoder encoder;
-extern lemlib::TrackingWheel trackingWheel;
 
 //Lemlib entire configuration for tracking
 extern lemlib::OdomSensors sensors;
