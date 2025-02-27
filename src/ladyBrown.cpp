@@ -5,17 +5,17 @@
 
 //Set lady brown to scoring position
 void setPos() {
-    if (rotSensor.get_position() > 2810) {
-        while (rotSensor.get_position() > 2810) {
-            ladyBrown.move(-127);
+    if (rotSensor.get_position() > 5500) {
+        while (rotSensor.get_position() > 5500) {
+            ladyBrown.move(-70);
             if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)) {
                 break;
             }
         }
     }
-    else if (rotSensor.get_position() < 2710) {
-        while (rotSensor.get_position() < 2710) {
-            ladyBrown.move(127);
+    else if (rotSensor.get_position() < 3950) {
+        while (rotSensor.get_position() < 3950) {
+            ladyBrown.move(70);
             if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)) {
                 break;
             }
@@ -37,8 +37,11 @@ void resetPos() {
 
 //Macro to grab ring off and set the position to the scoring position
 void scoreMacro() {
-    while(rotSensor.get_position() < 13380) {
-        ladyBrown.move(127);
+    intakeMotor.move(-40);
+    delay(70);
+    intakeMotor.brake();
+    while(rotSensor.get_position() < 15400) {
+        ladyBrown.move(70);
         if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)) {
             break;
         }

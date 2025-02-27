@@ -13,6 +13,7 @@ using namespace pros;
 void userControl() {
     rotSensor.set_position(100);
     ladyBrown.set_brake_mode(MotorBrake::hold);
+    int number;
     while (true) {
         // get left y and right x positions
         int leftY = controller.get_analog(E_CONTROLLER_ANALOG_LEFT_Y);
@@ -33,7 +34,7 @@ void userControl() {
         clearerToggle();
 
         //Control for the lady brown
-        /*if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
+        if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_UP)) {
             scoreMacro();
         }
         else if (controller.get_digital_new_press(pros::E_CONTROLLER_DIGITAL_RIGHT)) {
@@ -41,18 +42,24 @@ void userControl() {
         }
         else if (controller.get_digital_new_press(E_CONTROLLER_DIGITAL_DOWN)) {
             resetPos();
-        }*/
-        if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_UP) && rotSensor.get_position() < 13380) {
-            ladyBrown.move(-127);
+        }
+        else if (controller.get_digital_new_press(E_CONTROLLER_DIGITAL_LEFT)) {
+            number = rotSensor.get_position();
+            std::string temp_string = std::to_string(number);
+            const char* cstring = temp_string.c_str();
+            controller.print(1,1, cstring);
+        }
+        /*if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_UP) && rotSensor.get_position() < 19380) {
+            ladyBrown.move(70);
         }
         else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_DOWN)) {
-            ladyBrown.move(127);
+            ladyBrown.move(-70);
         }
-        else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_RIGHT) && rotSensor.get_position() < 13380) {
-            ladyBrown.move(-25);
+        else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_RIGHT) && rotSensor.get_position() < 19380) {
+            ladyBrown.move(25);
         }
         else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_LEFT)) {
-            ladyBrown.move(25);
+            ladyBrown.move(-25);
         }
         else if (controller.get_digital(pros::E_CONTROLLER_DIGITAL_A)) {
             ladyBrown.set_brake_mode(MotorBrake::coast);
@@ -61,7 +68,7 @@ void userControl() {
         else {
             ladyBrown.set_brake_mode(MotorBrake::hold);
             ladyBrown.brake();
-        }
+        }*/
 
 
 		delay(20);  // Run for 20 ms then update

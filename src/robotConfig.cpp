@@ -19,7 +19,7 @@ MotorGroup whole = MotorGroup({0, -0, 0, -0, 0, -0}, MotorGearset::blue);
 Motor intakeMotor = Motor(-7, MotorGearset::blue);
 
 //Motor and sensor for the lady brown
-Motor ladyBrown = Motor(-1, MotorGearset::red);
+Motor ladyBrown = Motor(1, MotorGearset::red);
 Rotation rotSensor = Rotation(-9);
 
 //Solenoid for mobile goal clamp
@@ -53,20 +53,20 @@ lemlib::OdomSensors sensors = lemlib::OdomSensors(nullptr, // vertical tracking 
 
 // lateral PID controller
 lemlib::ControllerSettings lateralController = lemlib::ControllerSettings(10, // proportional gain (kP)
-                                                                           0, // integral gain (kI)
-                                                                           3, // derivative gain (kD)
-                                                                           0, // anti windup
-                                                                           0, // small error range, in inches
-                                                                           0, // small error range timeout, in milliseconds
-                                                                           0, // large error range, in inches
-                                                                           0, // large error range timeout, in milliseconds
-                                                                           0 // maximum acceleration (slew)
+                                                                          0, // integral gain (kI)
+                                                                          3, // derivative gain (kD)
+                                                                          3, // anti windup
+                                                                          1, // small error range, in inches
+                                                                          100, // small error range timeout, in milliseconds
+                                                                          3, // large error range, in inches
+                                                                          500, // large error range timeout, in milliseconds
+                                                                          20 // maximum acceleration (slew)
 );
 
 // angular PID controller
 lemlib::ControllerSettings angularController = lemlib::ControllerSettings(2, // proportional gain (kP)
                                                                            0, // integral gain (kI)
-                                                                           10, // derivative gain (kD)
+                                                                           12.31, // derivative gain (kD)
                                                                            0, // anti windup
                                                                            0, // small error range, in degrees
                                                                            0, // small error range timeout, in milliseconds

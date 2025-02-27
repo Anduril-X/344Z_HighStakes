@@ -1,6 +1,5 @@
 #include "auton.h"
 #include "autonSelector.h"
-#include <iostream>
 #include "robotConfig.h"
 
 using namespace pros;
@@ -12,9 +11,12 @@ using namespace pros;
                          "name5"};  //auton5*/
 
 void auton() {
+    chassis.setPose(0, 0, 0);
+    // move 48" forwards
+    chassis.moveToPoint(0, 24, 10000);
     /*//Run the ____ auton
     if (autonSelection == 0) {
-
+7j
     }
     //Run the ____ auton
     else if (autonSelection == 1) {
@@ -32,7 +34,15 @@ void auton() {
     else if (autonSelection == 4) {
         
     }
-    //Default in case no selection so the robot does not disqualify itself.
+    //Run the ____ auton
+    else if (autonSelection == 5) {
+
+    }
+    //Run the ____ auton
+    else if (autonSelection == 6) {
+    
+    }
+    //Default in case no selection so the robot does not disqualify itself but also gets off the start line
     else {
         whole.move(25);
         delay(1000);
